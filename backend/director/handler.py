@@ -26,7 +26,10 @@ from director.agents.code_assistant import CodeAssistantAgent
 from director.agents.web_search_agent import WebSearchAgent
 from director.agents.clone_voice import CloneVoiceAgent
 from director.agents.voice_replacement import VoiceReplacementAgent
-
+from director.agents.tiktok_viral_analysis import ViralPatternAnalysisAgent
+from director.agents.tiktok_script_generator import TikTokScriptGeneratorAgent
+from director.agents.tiktok_upload import TikTokUploadAgent
+from director.agents.tiktok_workflow import TikTokMarketingWorkflow
 
 from director.core.session import Session, InputMessage, MsgStatus
 from director.core.reasoning import ReasoningEngine
@@ -70,7 +73,11 @@ class ChatHandler:
             CodeAssistantAgent,
             WebSearchAgent,
             VoiceReplacementAgent,
-            PricingAgent
+            PricingAgent,
+            ViralPatternAnalysisAgent,
+            TikTokScriptGeneratorAgent,
+            TikTokUploadAgent,
+            TikTokMarketingWorkflow
         ]
 
     def add_videodb_state(self, session):

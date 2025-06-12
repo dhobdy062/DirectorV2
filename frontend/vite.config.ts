@@ -1,7 +1,8 @@
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import process from 'process';
 
-export default ({ mode }) => {
+export default ({ mode }: { mode: string }) => {
   // Load environment variables based on the current mode (e.g., 'development', 'production')
   const env = loadEnv(mode, process.cwd());
 
