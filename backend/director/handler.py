@@ -1,35 +1,8 @@
 import os
 import logging
 
-from director.agents.frame import FrameAgent
-from director.agents.summarize_video import SummarizeVideoAgent
-from director.agents.download import DownloadAgent
-from director.agents.pricing import PricingAgent
-from director.agents.upload import UploadAgent
-from director.agents.search import SearchAgent
-from director.agents.prompt_clip import PromptClipAgent
-from director.agents.index import IndexAgent
-from director.agents.censor import CensorAgent
-from director.agents.image_generation import ImageGenerationAgent
-from director.agents.audio_generation import AudioGenerationAgent
-from director.agents.video_generation import VideoGenerationAgent
-from director.agents.stream_video import StreamVideoAgent
-from director.agents.subtitle import SubtitleAgent
-from director.agents.slack_agent import SlackAgent
-from director.agents.editing import EditingAgent
-from director.agents.dubbing import DubbingAgent
-from director.agents.text_to_movie import TextToMovieAgent
-from director.agents.composio import ComposioAgent
-from director.agents.transcription import TranscriptionAgent
-from director.agents.comparison import ComparisonAgent
-from director.agents.code_assistant import CodeAssistantAgent
-from director.agents.web_search_agent import WebSearchAgent
-from director.agents.clone_voice import CloneVoiceAgent
-from director.agents.voice_replacement import VoiceReplacementAgent
-from director.agents.tiktok_viral_analysis import ViralPatternAnalysisAgent
-from director.agents.tiktok_script_generator import TikTokScriptGeneratorAgent
-from director.agents.tiktok_upload import TikTokUploadAgent
-from director.agents.tiktok_workflow import TikTokMarketingWorkflow
+# Import modular agent registry
+from director.agents.registry import ALL_AGENTS
 
 from director.core.session import Session, InputMessage, MsgStatus
 from director.core.reasoning import ReasoningEngine
@@ -46,39 +19,8 @@ logger = logging.getLogger(__name__)
 class ChatHandler:
     def __init__(self, db, **kwargs):
         self.db = db
-
-        # Register the agents here
-        self.agents = [
-            SummarizeVideoAgent,
-            UploadAgent,
-            IndexAgent,
-            SearchAgent,
-            PromptClipAgent,
-            FrameAgent,
-            DownloadAgent,
-            CloneVoiceAgent,
-            CensorAgent,
-            ImageGenerationAgent,
-            AudioGenerationAgent,
-            VideoGenerationAgent,
-            StreamVideoAgent,
-            SubtitleAgent,
-            SlackAgent,
-            EditingAgent,
-            DubbingAgent,
-            TranscriptionAgent,
-            TextToMovieAgent,
-            ComposioAgent,
-            ComparisonAgent,
-            CodeAssistantAgent,
-            WebSearchAgent,
-            VoiceReplacementAgent,
-            PricingAgent,
-            ViralPatternAnalysisAgent,
-            TikTokScriptGeneratorAgent,
-            TikTokUploadAgent,
-            TikTokMarketingWorkflow
-        ]
+        # Use modular agent registry
+        self.agents = ALL_AGENTS
 
     def add_videodb_state(self, session):
         from videodb import connect
