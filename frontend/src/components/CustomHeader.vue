@@ -14,9 +14,9 @@
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #7aa1c8; /* Example: dark blue background */
-  color: #020f7e; /* Example: orange text */
-  box-shadow: 0 2px 4px rgba(177, 37, 37, 0.51);
+  background-color: #1E40AF; /* Dark blue background */
+  color: #C4B5FD; /* Light purple text */
+  box-shadow: 0 2px 4px rgba(30, 64, 175, 0.51);
 }
 
 .logo {
