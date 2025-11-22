@@ -3,6 +3,7 @@ import logging
 
 # Import modular agent registry
 from director.agents.registry import ALL_AGENTS
+from director.agents.youtube_film_clip_agent import YouTubeFilmClipAgent
 
 from director.core.session import Session, InputMessage, MsgStatus
 from director.core.reasoning import ReasoningEngine
@@ -19,8 +20,8 @@ logger = logging.getLogger(__name__)
 class ChatHandler:
     def __init__(self, db, **kwargs):
         self.db = db
-        # Use modular agent registry
-        self.agents = ALL_AGENTS
+        # Use modular agent registry and add YouTubeFilmClipAgent
+        self.agents = [*ALL_AGENTS, YouTubeFilmClipAgent]
 
     def add_videodb_state(self, session):
         from videodb import connect
@@ -37,14 +38,19 @@ class ChatHandler:
             )
 
     def agents_list(self):
-        return [
-            {
-                "name": agent_instance.name,
-                "description": agent_instance.agent_description,
-            }
-            for agent in self.agents
-            for agent_instance in [agent(Session(db=self.db))]
-        ]
+        agents_info = []
+        for agent in self.agents:
+            try:
+                agent_instance = agent(Session(db=self.db))
+                agents_info.append(
+                    {
+                        "name": agent_instance.name,
+                        "description": agent_instance.agent_description,
+                    }
+                )
+            except Exception:
+                continue
+        return agents_info
 
     def chat(self, message):
         logger.info(f"ChatHandler input message: {message}")

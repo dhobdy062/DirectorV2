@@ -161,6 +161,7 @@ install_python_and_pip() {
         # Check if Python version is at least 3.9
         if [[ $(echo -e "$PYTHON_VERSION\n$REQUIRED_VERSION" | sort -V | head -n1) == "$REQUIRED_VERSION" ]]; then
             echo "✅ Python 3 (version $PYTHON_VERSION) is already installed and meets the required version."
+            return 0
         else
             echo "❌ Current Python version ($PYTHON_VERSION) is less than the required 3.9, trying to upgrade it.."
         fi

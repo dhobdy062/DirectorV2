@@ -47,4 +47,4 @@ lint:
 
 run:
 	source $(VENV_DIR)/bin/activate && \
-	python director/entrypoint/api/server.py
+	python -m director.entrypoint.api.server
