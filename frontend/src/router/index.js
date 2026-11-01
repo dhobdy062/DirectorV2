@@ -9,8 +9,8 @@ const routes = [
     component: TikTokShopStudioView,
   },
   {
-    path: "/director",
-    name: "DirectorChat",
+    path: "/chat",
+    name: "PerspxtvChat",
     component: DefaultView,
   },
 ];

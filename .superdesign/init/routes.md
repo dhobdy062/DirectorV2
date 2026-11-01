@@ -3,7 +3,7 @@
 | Path | Name | Component | Purpose |
 |------|------|-----------|---------|
 | `/` | TikTokShopStudio | `views/TikTokShopStudioView.vue` | Trend discovery, evaluation, template export |
-| `/director` | DirectorChat | `views/DefaultView.vue` | Original VideoDB Director agent chat |
+| `/chat` | PerspxtvChat | `views/DefaultView.vue` | Perspxtv agent chat |
 
 ```js
 // frontend/src/router/index.js
@@ -13,6 +13,6 @@ import TikTokShopStudioView from "../views/TikTokShopStudioView.vue";
 
 const routes = [
   { path: "/", name: "TikTokShopStudio", component: TikTokShopStudioView },
-  { path: "/director", name: "DirectorChat", component: DefaultView },
+  { path: "/chat", name: "PerspxtvChat", component: DefaultView },
 ];
 ```

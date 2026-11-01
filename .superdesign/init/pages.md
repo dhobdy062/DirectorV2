@@ -17,7 +17,7 @@ Dependencies:
 - `frontend/src/components/tiktokShop/EvaluationDetailCard.vue`
 - `frontend/src/components/tiktokShop/TemplateBlueprintPanel.vue`
 
-## /director (Chat)
+## /chat (Agent chat)
 Entry: `frontend/src/views/DefaultView.vue`
 Dependencies:
 - `@videodb/chat-vue` (external)

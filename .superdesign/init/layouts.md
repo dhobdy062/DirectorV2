@@ -19,4 +19,4 @@ import "./style.css";
 Primary layout for TikTok Shop workflow: header, tabs, three step panels (discover → evaluate → template).
 
 ## frontend/src/views/DefaultView.vue
-Full-height Director chat layout using `@videodb/chat-vue` ChatInterface.
+Full-height Perspxtv chat layout using `@videodb/chat-vue` ChatInterface.

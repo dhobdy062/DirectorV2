@@ -35,8 +35,8 @@ function copyTemplatePrompt() {
   navigator.clipboard?.writeText(template.value.agentPrompt);
 }
 
-function openDirectorChat() {
-  router.push({ name: "DirectorChat" });
+function openAgentChat() {
+  router.push({ name: "PerspxtvChat" });
 }
 </script>
 
@@ -44,7 +44,7 @@ function openDirectorChat() {
   <div class="min-h-screen bg-primary-100 text-textdark flex flex-col">
     <TikTokShopStudioHeader
       title="Trend Lab for TikTok Shop"
-      subtitle="Find trending shop videos, score what makes them convert, and export a Director template to produce similar content."
+      subtitle="Find trending shop videos, score what makes them convert, and export a Perspxtv template to produce similar content."
     />
 
     <div class="container py-20 flex-1 space-y-20">
@@ -95,9 +95,9 @@ function openDirectorChat() {
             type="button"
             class="rounded-8 bg-primary-800 text-white px-16 py-10 text-body"
             :disabled="!template"
-            @click="openDirectorChat"
+            @click="openAgentChat"
           >
-            Open Director chat
+            Open Perspxtv chat
           </button>
         </div>
       </section>

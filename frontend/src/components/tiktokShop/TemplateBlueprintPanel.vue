@@ -33,7 +33,7 @@ defineEmits(["copy"]);
       class="rounded-8 bg-primary-800 text-white px-16 py-10 text-body hover:bg-primary-900"
       @click="$emit('copy')"
     >
-      Copy Director prompt
+      Copy Perspxtv prompt
     </button>
   </section>
 </template>

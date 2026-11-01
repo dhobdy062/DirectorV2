@@ -1,12 +1,11 @@
 <template>
   <header class="custom-header">
-    <img src="https://cdn.discordapp.com/attachments/1130919279279277632/1130919280110914098/tulbox-logo.png" alt="TULBOX Logo" class="logo" />
-    <h1 class="title">TULBOX</h1>
+    <span class="logo-mark" aria-hidden="true">P</span>
+    <h1 class="title">Perspxtv</h1>
   </header>
 </template>
 
 <script setup>
-// No script needed for static header
 </script>
 
 <style scoped>
@@ -14,19 +13,28 @@
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #1E40AF; /* Dark blue background */
-  color: #C4B5FD; /* Light purple text */
-  box-shadow: 0 2px 4px rgba(30, 64, 175, 0.51);
+  background-color: #1e1b4b;
+  color: #c4b5fd;
+  box-shadow: 0 2px 4px rgba(30, 27, 75, 0.4);
 }
 
-.logo {
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
   height: 40px;
   margin-right: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1, #c4b5fd);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.25rem;
 }
 
 .title {
   font-size: 1.5rem;
-  font-weight: bold;
-  font-family: 'Arial Black', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 </style>
